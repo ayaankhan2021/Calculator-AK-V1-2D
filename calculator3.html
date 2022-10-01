@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HTML & Javascript & CSS calculator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+<center>
+
+<div class="ui">
+<h2>AK-V1-2D</h2>
+<div class="whole_display">
+
+<h3 id="display"></h3>
+
+<p id='equal'></p>
+</div>
+
+<input onclick="myFunction1()" id="button_1" type="button" value="1"></input>
+<input onclick="myFunction2()" id="button_2" type="button" value="2"></input>
+<input onclick="myFunction3()" id="button_3" type="button" value="3"></input>
+<input onclick="Addition()" id="Addition" type="button" value="+"></input>
+<section>
+<input onclick="myFunction4()" id="button_4" type="button" value="4"></input>
+<input onclick="myFunction5()" id="button_5" type="button" value="5"></input>
+<input onclick="myFunction6()" id="button_6" type="button" value="6"></input>
+<input onclick="Subtraction()" id="Subtraction" type="button" value="-"></input>
+</section>
+<section>
+<input onclick="myFunction7()" id="button_7" type="button" value="7"></input>
+<input onclick="myFunction8()" id="button_8" type="button" value="8"></input>
+<input onclick="myFunction9()" id="button_9" type="button" value="9"></input>
+<input onclick="Multiplication()" id="Multiplication" type="button" value="*"></input>
+</section>
+<section>
+<input onclick="Clear()" id="C" type="button" value="C"></input>
+<input onclick="myFunction0()" id="button_0" type="button" value="0"></input>
+<input onclick="Equal()" id="Equal" type="button" value="="></input>
+<input onclick="Division()" id="Division" type="button" value="/"></input>
+</section>
+</div>
+</center>
+<script>
+var button1;
+var button2;
+var button3;
+var button4;
+var button5;
+var button6;
+var button7;
+var button8;
+var button9;
+var button0;
+var equal;
+var symbol = '';
+var display = '';
+var result;
+function myFunction1(){
+button1 = document.getElementById('button_1').value;
+display += button1;
+document.getElementById('display').innerHTML = display;
+}
+function myFunction2(){
+button2 = document.getElementById('button_2').value;
+display += button2;
+document.getElementById('display').innerHTML = display;
+}
+function myFunction3(){
+button3 = document.getElementById('button_3').value;
+display += button3;
+document.getElementById('display').innerHTML = display;
+}
+function myFunction4(){
+button4 = document.getElementById('button_4').value;
+display += button4;
+document.getElementById('display').innerHTML = display;
+}
+function myFunction5(){
+button5 = document.getElementById('button_5').value;
+display += button5;
+document.getElementById('display').innerHTML = display;
+}
+function myFunction6(){
+button6 = document.getElementById('button_6').value;
+display += button6;
+document.getElementById('display').innerHTML = display;
+}
+function myFunction7(){
+button7 = document.getElementById('button_7').value;
+display += button7;
+document.getElementById('display').innerHTML = display;
+}
+function myFunction8(){
+button8 = document.getElementById('button_8').value;
+display += button8;
+document.getElementById('display').innerHTML = display;
+}
+function myFunction9(){
+button9 = document.getElementById('button_9').value;
+display += button9;
+document.getElementById('display').innerHTML = display;
+}
+function Clear(){
+document.getElementById('display').innerHTML = '';
+display = '';
+equal = '';
+symbol = '';
+document.getElementById('equal').innerHTML = '';
+}
+function myFunction0(){
+button0 = document.getElementById('button_0').value;
+display += button0;
+document.getElementById('display').innerHTML = display;
+}
+function Equal(){
+const number_text = display.split(symbol);
+var first_number = parseInt(number_text[0]);
+var second_number = parseInt(number_text[1]);
+switch (symbol){
+	case "+":
+	result = first_number + second_number;
+	break;
+	case "-":
+	result = first_number - second_number;
+	break;
+	case "*":
+	result = first_number * second_number;
+	break;
+	case "/":
+	result = first_number / second_number;
+	break;
+	
+}
+document.getElementById('equal').innerHTML = result;
+if (symbol == ""){
+	document.getElementById('equal').innerHTML = display;
+}
+};
+function Addition(){
+
+if (symbol.length == 0){
+symbol = document.getElementById('Addition').value;
+display += symbol;
+}
+document.getElementById('display').innerHTML = display;
+}
+function Subtraction(){
+if (symbol.length == 0){
+symbol = document.getElementById('Subtraction').value;
+display += symbol;
+}
+document.getElementById('display').innerHTML = display;
+}
+function Multiplication(){
+if (symbol.length == 0){
+symbol = document.getElementById('Multiplication').value;
+display += symbol;
+}
+document.getElementById('display').innerHTML = display;
+}
+function Division(){
+if(symbol.length == 0){
+symbol = document.getElementById('Division').value;
+display += symbol;
+}
+document.getElementById('display').innerHTML = display;
+}
+</script>
+</body>
+</html>
